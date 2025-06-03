@@ -42,7 +42,7 @@ public class UserController {
     }
 
     @GetMapping("/admin/users")
-    @PreAuthorize("hasRole('admin')")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<Map<String, Object>> getUsers() {
         Map<String, Object> response = new HashMap<>();
         response.put("tenantId", TenantContext.getCurrentTenant());
