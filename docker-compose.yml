@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   keycloak-db:
-    image: postgres:15
+    image: postgres:17.5
     container_name: keycloak-postgres-2
     environment:
       POSTGRES_DB: keycloak
@@ -16,7 +16,7 @@ services:
       - "5432:5432"
 
   keycloak:
-    image: quay.io/keycloak/keycloak:23.0
+    image: quay.io/keycloak/keycloak:26.2.0
     container_name: keycloak-server
     environment:
       KC_DB: postgres
